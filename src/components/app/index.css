@@ -1,0 +1,29 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+    outline: none;
+}
+.App {
+    overflow-x: hidden;
+    background: url(./img/got.jpeg) center center no-repeat;
+    background-size: cover;
+    font-size: 16px;
+    height: 100%;
+    min-height: 940px;	
+}
+
+.error-component {
+    color: black;
+    font-size: 24px;
+    width: 50%;
+    height: 100%;
+    background-color: white;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10px 0;
+}
+.error-component span {
+    color: grey;
+    font-size: 20px;
+}
