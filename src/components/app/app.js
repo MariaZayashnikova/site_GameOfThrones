@@ -64,6 +64,7 @@ export default class App extends Component {
                                     onClick={this.toggleRandomChar}
                                 >
                                     {text}
+                                    <br />
                                     RandomChar
                                 </button>
                             </Col>
