@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import Spinner from '../spinner/spinner';
 import ErrMessage from '../errMessage/errMessage';
@@ -19,7 +19,7 @@ const ItemDetailsSpan = styled.span`
     font-size: 24px;
 `;
 
-const Field = ({item, field, label}) => {
+const Field = ({ item, field, label }) => {
     return (
         <li className="list-group-item d-flex justify-content-between">
             <span className="term">{label}</span>
@@ -28,7 +28,7 @@ const Field = ({item, field, label}) => {
     )
 }
 
-export {Field};
+export { Field };
 
 export default class ItemDetails extends Component {
 
@@ -39,7 +39,7 @@ export default class ItemDetails extends Component {
     }
 
     updateItem = () => {
-        if(!this.props.itemId) {
+        if (!this.props.itemId) {
             this.setState({
                 loading: true
             });
@@ -49,11 +49,11 @@ export default class ItemDetails extends Component {
         this.setState({
             item: null
         });
-        const {getData} = this.props;
-   
+        const { getData } = this.props;
+
         getData(this.props.itemId)
             .then((item) => {
-                this.setState({item});
+                this.setState({ item });
             })
             .catch(() => {
                 this.setState({
@@ -67,7 +67,7 @@ export default class ItemDetails extends Component {
     }
 
     componentDidUpdate(prevProps) {
-        if(prevProps.itemId !== this.props.itemId) {
+        if (prevProps.itemId !== this.props.itemId) {
             this.setState({
                 loading: false
             });
@@ -76,14 +76,14 @@ export default class ItemDetails extends Component {
     }
 
     render() {
-        const {item, loading, error} = this.state;
+        const { item, loading, error } = this.state;
         const elements = this.props.children;
 
-        let err = error ? <ErrMessage/> : null;
-        let message = loading ? <Message/> : null;
-        let spinner = (!loading && !item && !error) ? <Spinner/> : null;
-        let content = (!loading && item) ? <View item={item} elements={elements}/> : null;
-        
+        let err = error ? <ErrMessage /> : null;
+        let message = loading ? <Message /> : null;
+        let spinner = (!loading && !item && !error) ? <Spinner /> : null;
+        let content = (!loading && item) ? <View item={item} elements={elements} /> : null;
+
         return (
             <ItemDetailsDiv className="rounded">
                 {err}
@@ -95,16 +95,16 @@ export default class ItemDetails extends Component {
     }
 }
 
-const View = ({item, elements}) => {
-    let {name} = item;
+const View = ({ item, elements }) => {
+    let { name } = item;
 
     return (
         <>
-        <h4>{name}</h4>
+            <h4>{name}</h4>
             <ul className="list-group list-group-flush">
                 {
                     React.Children.map(elements, (elem) => {
-                        return React.cloneElement(elem, {item});
+                        return React.cloneElement(elem, { item });
                     })
                 }
             </ul>
@@ -114,6 +114,6 @@ const View = ({item, elements}) => {
 
 const Message = () => {
     return (
-        <ItemDetailsSpan>Select Char</ItemDetailsSpan>
+        <ItemDetailsSpan>Select Item</ItemDetailsSpan>
     )
 }

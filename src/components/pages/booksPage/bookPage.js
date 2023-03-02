@@ -1,12 +1,10 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import ItemList from '../../itemList/itemList';
 import ErrMessage from '../../errMessage/errMessage';
-import GotService from '../../../servises/getServise';
-import {withRouter} from 'react-router-dom';
+import GotService from '../../../serviсes/getServiсe';
 
-
- class BooksPage extends Component {
-
+class BooksPage extends Component {
     state = {
         itemId: null,
         error: false
@@ -19,7 +17,7 @@ import {withRouter} from 'react-router-dom';
             itemId: id
         });
     };
-    
+
     componentDidCatch() {
         this.setState({
             error: true
@@ -27,10 +25,10 @@ import {withRouter} from 'react-router-dom';
     }
 
     render() {
-        const {error} = this.state;
+        const { error } = this.state;
 
         if (error) {
-            return <ErrMessage/>;
+            return <ErrMessage />;
         }
 
         return (
@@ -39,7 +37,7 @@ import {withRouter} from 'react-router-dom';
                     this.props.history.push(id);
                 }}
                 getData={this.gotService.getAllBooks}
-                renderItem={({name}) => `${name}`}
+                renderItem={({ name }) => `${name}`}
             />
         )
     }

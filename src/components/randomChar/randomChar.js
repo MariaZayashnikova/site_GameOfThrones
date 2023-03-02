@@ -1,11 +1,10 @@
-import React, {useState, useEffect} from 'react';
-import './randomChar.css';
-import GotService from '../../servises/getServise';
+import React, { useState, useEffect } from 'react';
+import GotService from '../../serviсes/getServiсe';
 import Spinner from '../spinner/spinner';
 import ErrMessage from '../errMessage/errMessage';
+import './randomChar.css';
 
-
-function RandomChar ({interval}) {
+function RandomChar({ interval }) {
     const [char, setChar] = useState({});
     let [loading, updateLoading] = useState(true);
     let [error, updateError] = useState(false);
@@ -21,14 +20,14 @@ function RandomChar ({interval}) {
     }, []);
 
     function updateChar() {
-        const id = Math.round(Math.random()*140 + 25);
-   
+        const id = Math.round(Math.random() * 140 + 25);
+
         gotService.getCharacter(id)
             .then(onCharLoaded)
             .catch(onError);
     }
 
-    function onCharLoaded (char) {
+    function onCharLoaded(char) {
         setChar(char);
         updateLoading(
             loading = false
@@ -44,10 +43,10 @@ function RandomChar ({interval}) {
         );
     }
 
-    let spinner = loading ? <Spinner/> : null;
-    let content = !(loading || error) ? <View char={char}/> : null;
-    let err = error ? <ErrMessage/> : null;
-       
+    let spinner = loading ? <Spinner /> : null;
+    let content = !(loading || error) ? <View char={char} /> : null;
+    let err = error ? <ErrMessage /> : null;
+
     return (
         <div className="random-block rounded">
             {spinner}
@@ -57,8 +56,8 @@ function RandomChar ({interval}) {
     );
 }
 
-const View = ({char}) => {
-    let {name, gender, born, died, culture} = char;
+const View = ({ char }) => {
+    let { name, gender, born, died, culture } = char;
     return (
         <>
             <h4>Random Character: {name}</h4>
@@ -71,7 +70,7 @@ const View = ({char}) => {
                     <span className="term">Born </span>
                     <span>{born}</span>
                 </li>
-                 <li className="list-group-item d-flex justify-content-between">
+                <li className="list-group-item d-flex justify-content-between">
                     <span className="term">Died </span>
                     <span>{died}</span>
                 </li>

@@ -1,12 +1,11 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import ItemList from '../../itemList/itemList';
-import ItemDetails, {Field} from '../../itemDetails/itemDetails';
+import ItemDetails, { Field } from '../../itemDetails/itemDetails';
 import ErrMessage from '../../errMessage/errMessage';
-import GotService from '../../../servises/getServise';
+import GotService from '../../../serviсes/getServiсe';
 import RowBlock from '../../rowBlock/rowBlock';
 
 export default class HousesPage extends Component {
-
     state = {
         itemId: null,
         error: false
@@ -19,7 +18,7 @@ export default class HousesPage extends Component {
             itemId: id
         });
     };
-    
+
     componentDidCatch() {
         this.setState({
             error: true
@@ -27,17 +26,17 @@ export default class HousesPage extends Component {
     }
 
     render() {
-        const {error} = this.state;
+        const { error } = this.state;
 
         if (error) {
-            return <ErrMessage/>;
+            return <ErrMessage />;
         }
 
         const itemList = (
             <ItemList
                 itemId={this.updateHouseId}
                 getData={this.gotService.getAllHouses}
-                renderItem={({name}) => `${name}`}
+                renderItem={({ name }) => `${name}`}
             />
         )
 
@@ -45,15 +44,15 @@ export default class HousesPage extends Component {
             <ItemDetails
                 itemId={this.state.itemId}
                 getData={this.gotService.getHouse} >
-                    <Field field='region' label='Region'/>
-                    <Field field='words' label='Words'/>
-                    <Field field='titles' label='Titles'/>
-                    <Field field='ancestralWeapons' label='Ancestral Weapons'/>
+                <Field field='region' label='Region' />
+                <Field field='words' label='Words' />
+                <Field field='titles' label='Titles' />
+                <Field field='ancestralWeapons' label='Ancestral Weapons' />
             </ItemDetails>
         )
 
         return (
-            <RowBlock list={itemList} details={detailsItem}/>
+            <RowBlock list={itemList} details={detailsItem} />
         )
     }
 }
