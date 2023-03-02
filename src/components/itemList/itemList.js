@@ -1,36 +1,32 @@
-import React, {Component} from 'react';
-import './itemList.css';
+import React, { Component } from 'react';
 import Spinner from '../spinner/spinner';
 import ErrMessage from '../errMessage/errMessage';
+import './itemList.css';
 
- class ItemList extends Component {
-
+class ItemList extends Component {
     createListItem = (arr) => {
         return arr.map(item => {
-            const {id} = item;
+            const { id } = item;
             const label = this.props.renderItem(item);
             return (
                 <li
-                className="list-group-item"
-                key={id}
-                onClick={() => this.props.itemId(id)}
+                    className="list-group-item"
+                    key={id}
+                    onClick={() => this.props.itemId(id)}
                 >
-                {label}
+                    {label}
                 </li>
             )
         })
     }
 
     render() {
-        const {data, err, loading} = this.props;
+        const { data, err, loading } = this.props;
         let elements;
 
-        if(!err && data) {
-            elements = this.createListItem(data);
-        }
+        if (!err && data) elements = this.createListItem(data);
 
         return (
-            
             <ul className="item-list list-group">
                 {err}
                 {loading}
@@ -46,12 +42,12 @@ const higherOrderComponent = (View) => {
             data: null,
             error: false
         }
-    
-        componentDidMount() { 
-            const {getData} = this.props;
+
+        componentDidMount() {
+            const { getData } = this.props;
             getData()
                 .then((data) => {
-                    this.setState({data});
+                    this.setState({ data });
                 })
                 .catch(() => {
                     this.setState({
@@ -61,13 +57,13 @@ const higherOrderComponent = (View) => {
         }
 
         render() {
-            const {data, error} = this.state;
+            const { data, error } = this.state;
 
-            let err = error ? <ErrMessage/> : null;
-            let loading = !data && !error ? <Spinner/> : null;
+            let err = error ? <ErrMessage /> : null;
+            let loading = !data && !error ? <Spinner /> : null;
 
             return (
-                <View {...this.props} data={data} err={err} loading={loading}/>
+                <View {...this.props} data={data} err={err} loading={loading} />
             )
         }
     }

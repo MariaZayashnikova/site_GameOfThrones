@@ -1,12 +1,11 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import ItemList from '../../itemList/itemList';
-import ItemDetails, {Field} from '../../itemDetails/itemDetails';
+import ItemDetails, { Field } from '../../itemDetails/itemDetails';
 import ErrMessage from '../../errMessage/errMessage';
-import GotService from '../../../servises/getServise';
+import GotService from '../../../serviсes/getServiсe';
 import RowBlock from '../../rowBlock/rowBlock';
 
 export default class CharacterPage extends Component {
-
     state = {
         itemId: null,
         error: false
@@ -19,7 +18,7 @@ export default class CharacterPage extends Component {
             itemId: id
         });
     };
-    
+
     componentDidCatch() {
         this.setState({
             error: true
@@ -27,17 +26,17 @@ export default class CharacterPage extends Component {
     }
 
     render() {
-        const {error} = this.state;
+        const { error } = this.state;
 
         if (error) {
-            return <ErrMessage/>;
+            return <ErrMessage />;
         }
 
         const itemList = (
             <ItemList
                 itemId={this.updateCharId}
                 getData={this.gotService.getAllCharacters}
-                renderItem={({name, gender}) => `${name} (${gender})`}
+                renderItem={({ name, gender }) => `${name} (${gender})`}
             />
         )
 
@@ -45,15 +44,15 @@ export default class CharacterPage extends Component {
             <ItemDetails
                 itemId={this.state.itemId}
                 getData={this.gotService.getCharacter} >
-                    <Field  field='gender' label='Gender'/>
-                    <Field  field='born'label='Born' />
-                    <Field  field='died' label='Died'/>
-                    <Field  field='culture'label='Culture' />
+                <Field field='gender' label='Gender' />
+                <Field field='born' label='Born' />
+                <Field field='died' label='Died' />
+                <Field field='culture' label='Culture' />
             </ItemDetails>
         )
 
         return (
-            <RowBlock list={itemList} details={detailsItem}/>
+            <RowBlock list={itemList} details={detailsItem} />
         )
     }
 }

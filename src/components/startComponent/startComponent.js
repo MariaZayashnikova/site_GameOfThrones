@@ -2,7 +2,6 @@ import React from 'react';
 import img from '../app/img/watch-game-of-thrones-tile.jpg';
 import './startComponent.css';
 
-
 function StartComponent() {
     return (
         <div className="start-component">

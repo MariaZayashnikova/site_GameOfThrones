@@ -1,7 +1,7 @@
 import React from 'react';
-import {Col, Row} from 'reactstrap';
+import { Col, Row } from 'reactstrap';
 
-const RowBlock = ({list, details}) => {
+const RowBlock = ({ list, details }) => {
     return (
         <Row>
             <Col md='6'>
