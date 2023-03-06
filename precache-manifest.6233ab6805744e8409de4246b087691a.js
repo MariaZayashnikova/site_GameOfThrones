@@ -1,19 +1,19 @@
 self.__precacheManifest = [
   {
-    "revision": "144371b23910146a632e",
+    "revision": "55114470b90d0a47706c",
     "url": "/site_GameOfThrones/static/css/main.5df02072.chunk.css"
   },
   {
-    "revision": "144371b23910146a632e",
-    "url": "/site_GameOfThrones/static/js/main.144371b2.chunk.js"
+    "revision": "55114470b90d0a47706c",
+    "url": "/site_GameOfThrones/static/js/main.55114470.chunk.js"
   },
   {
-    "revision": "894bac7f866fc0eda511",
+    "revision": "dfb71b0690997b6f99a3",
     "url": "/site_GameOfThrones/static/css/1.d99a3e42.chunk.css"
   },
   {
-    "revision": "894bac7f866fc0eda511",
-    "url": "/site_GameOfThrones/static/js/1.894bac7f.chunk.js"
+    "revision": "dfb71b0690997b6f99a3",
+    "url": "/site_GameOfThrones/static/js/1.dfb71b06.chunk.js"
   },
   {
     "revision": "c66f86fba0cec4356822",
@@ -32,7 +32,7 @@ self.__precacheManifest = [
     "url": "/site_GameOfThrones/static/media/got.4da81083.jpeg"
   },
   {
-    "revision": "697b06728cf0d1a0a6a14ec2337dd2fe",
+    "revision": "5862a336a36705d7271690c173fe0f2b",
     "url": "/site_GameOfThrones/index.html"
   }
 ];
