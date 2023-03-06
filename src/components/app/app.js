@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Col, Row, Container } from 'reactstrap';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import Header from '../header/header';
 import RandomChar from '../randomChar/randomChar';
 import CharacterPage from '../pages/characterPage/characterPage';
