@@ -1,13 +1,13 @@
 <h1>Game Of Thrones</h1>
 <br>
-Проект создан с помощью create react app, реализован на <bold>React.js</bold>. Для стилей используется <bold>CSS</bold> и <bold>styled-components</bold>,
-для роутинга - <bold>react router</bold>.
+Проект создан с помощью create react app, реализован на <b>React.js</b>. Для стилей используется <b>CSS</b> и <b>styled-components</b>,
+для роутинга - <b>react router</b>.
 <br>
 <h3>Задачи проекта:</h3>
 1.	Начальная страница: Блок «Случайный персонаж» и Начальная страница проекта.  Меняется персонаж каждые 15 секунд. Есть возможность скрыть этот блок.
 <br>
-https://user-images.githubusercontent.com/65776059/223142155-25d9dcd7-0bcb-47bc-83ef-368c9da58062.png
-https://user-images.githubusercontent.com/65776059/223142430-06bf267d-14ea-4676-bdea-cbd712a7e885.png
+![Начальная страница](https://user-images.githubusercontent.com/65776059/223144403-73d4713d-3387-4980-a3b4-500ea1d3d386.png)
+
 
 <br>
 2.	Страница «Персонажи».  Показываются 10 персонажей «Игры престолов» с возможностью отображения дополнительной информации по выбранному персонажу.
