@@ -15,5 +15,5 @@ https://mariazayashnikova.github.io/site_GameOfThrones/
 <br>
 4.	Страница «Книги». Показываются 10 книг «Игры престолов» с возможностью отображения дополнительной информации по выбранной книге.
 <br>
-
-В проекте BrowserRouter заменён на HashRouter для того, чтобы развернуть приложение на Github Pages.
+<br>
+*В проекте BrowserRouter заменён на HashRouter для того, чтобы развернуть приложение на Github Pages.
